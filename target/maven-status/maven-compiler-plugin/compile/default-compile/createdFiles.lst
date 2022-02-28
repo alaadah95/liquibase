@@ -1,0 +1,11 @@
+com\liquibase\demo\breed\Breed.class
+com\liquibase\demo\search\ProfileDto.class
+com\liquibase\demo\search\SearchProfilesController.class
+com\liquibase\demo\profile\ProfileService.class
+com\liquibase\demo\profile\Profile.class
+com\liquibase\demo\profile\ProfileRepository.class
+com\liquibase\demo\LiquibaseApplication.class
+com\liquibase\demo\profile\ProfileController.class
+com\liquibase\demo\breed\BreedRepository.class
+com\liquibase\demo\profile\NewProfileRequest.class
+com\liquibase\demo\breed\BreedController.class

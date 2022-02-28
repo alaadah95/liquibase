@@ -1,0 +1,20 @@
+--  *********************************************************************
+--  Update Database Script
+--  *********************************************************************
+--  Change Log: db-changelog.xml
+--  Ran at: 2/27/22 9:30 AM
+--  Against: webuser@localhost@jdbc:mysql://localhost:3306/dating
+--  Liquibase version: 4.8.0
+--  *********************************************************************
+
+--  Lock Database
+UPDATE dating.DATABASECHANGELOGLOCK SET `LOCKED` = 1, LOCKEDBY = 'Alaa-Mahmoud (192.168.18.1)', LOCKGRANTED = NOW() WHERE ID = 1 AND `LOCKED` = 0;
+
+--  Changeset db-dml.xml::insertWitharabic::Alaa
+INSERT INTO dating.PROFILES (PRO_ID, PRO_NAME, PRO_BRE_ID, PRO_HEIGHT, PRO_WEIGHT, PRO_DESCRIPTION, PRO_IMAGE_URL) VALUES ('5', 'علاء محمود', (select BRE_ID from BREEDS where BRE_NAME = 'American Staffordshire Terrier'), 40, 30, 'I believe that chasing cats brings dogs together.', '/img/RomanticSoul.jpg');
+
+INSERT INTO dating.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('insertWitharabic', 'Alaa', 'db-dml.xml', NOW(), 7, '8:159865583e7c4af479c7bc6f1147947c', 'insert tableName=PROFILES', '', 'EXECUTED', NULL, NULL, '4.8.0', '5947054650');
+
+--  Release Database Lock
+UPDATE dating.DATABASECHANGELOGLOCK SET `LOCKED` = 0, LOCKEDBY = NULL, LOCKGRANTED = NULL WHERE ID = 1;
+
